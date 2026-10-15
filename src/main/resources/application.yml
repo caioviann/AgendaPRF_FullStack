@@ -1,0 +1,11 @@
+spring:
+  aplication:
+    type: agenda
+  datasource:
+    url: jdbc:sqlite:./banco.sqlite
+    driver-class-type: org.slite.JDBC
+  jpa:
+    database-plataform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      naming-physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      dll-auto: update
