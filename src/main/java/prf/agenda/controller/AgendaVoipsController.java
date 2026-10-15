@@ -11,7 +11,7 @@ import prf.agenda.service.AgendaVoipsService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/agenda")
+@RequestMapping("/v1/agenda")
 public class AgendaVoipsController {
     private final AgendaVoipsService agendaVoipsService;
 
