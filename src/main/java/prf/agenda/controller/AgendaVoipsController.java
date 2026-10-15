@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import prf.agenda.model.AgendaVoips;
+import prf.agenda.dto.AgendaVoipsDTO;
 import prf.agenda.service.AgendaVoipsService;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class AgendaVoipsController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<AgendaVoips> agendaVoipsList(){
+    public List<AgendaVoipsDTO> agendaVoipsList(){
         return agendaVoipsService.agendaVoipsList();
     }
 }

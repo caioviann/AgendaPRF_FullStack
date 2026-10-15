@@ -3,7 +3,9 @@ package prf.agenda.model;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "AgendaVoips")
@@ -16,7 +18,7 @@ public class AgendaVoips {
 
     private String name;
 
-    @OneToMany(mappedBy = "agendaVoips", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "agendaVoips", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PhoneVoips> phoneVoips = new ArrayList<>();
 
     public AgendaVoips(){
@@ -50,5 +52,13 @@ public class AgendaVoips {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public List<PhoneVoips> getPhoneVoips() {
+        return phoneVoips;
+    }
+
+    public void setPhoneVoips(List<PhoneVoips> phoneVoips) {
+        this.phoneVoips = phoneVoips;
     }
 }
